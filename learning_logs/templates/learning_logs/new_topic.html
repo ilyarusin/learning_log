@@ -1,0 +1,14 @@
+{% extends "learning_logs/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+    <h3 class="navbar-text">Добавить новую тему:</h3>
+
+    <form action="{% url 'learning_logs:new_topic' %}" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button name="submit" class="btn btn-outline-secondary btn-sm">Добавить тему</button>
+    </form>
+
+{% endblock content %}
